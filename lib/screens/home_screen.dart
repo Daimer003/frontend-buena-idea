@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'categorias_screen.dart';
+import 'ofertas_screen.dart';
+import 'envios_gratis_screen.dart';
 // importa la nueva pantalla
 
 class HomeScreen extends StatefulWidget {
@@ -91,11 +94,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     Wrap(
                       spacing: 12,
                       children: [
-                        _buildOptionButton(Icons.category, 'Categorias', () {}),
-                        _buildOptionButton(Icons.local_offer, 'Ofertas', () {}),
-                        _buildOptionButton(Icons.send, 'Envios gratuitos', () {}),
-                        _buildOptionButton(Icons.location_on, 'Ubicación', () {}),
-                        _buildOptionButton(Icons.contact_mail, 'Contacto', () {}),
+                        _buildOptionButton(Icons.category, 'Categorias', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => const CategoriasScreen()),
+                          );
+                        }),
+                        _buildOptionButton(Icons.local_offer, 'Ofertas', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => const OfertasScreen()),
+                          );
+                        }),
+                        _buildOptionButton(Icons.send, 'Envios gratuitos', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => const EnviosGratisScreen()),
+                          );
+                        }),
+                        _buildOptionButton(Icons.location_on, 'Ubicación', () {
+                          // Aquí puedes abrir Google Maps, ubicación actual, etc.
+                        }),
                       ],
                     ),
                     const SizedBox(height: 16),
@@ -121,9 +140,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    _buildRestaurantCard("Juguete", "assets/juguete.jpg"),
-                    _buildRestaurantCard("Juguete", "assets/juguete-2.jpg"),
-                    _buildRestaurantCard("Comida", "assets/verduras-buenas-para-perros.png"),
+                    _buildRestaurantCard("Juguete", "assets/producto.jpg"),
+                    _buildRestaurantCard("Juguete", "assets/producto.jpg"),
+                    _buildRestaurantCard("Comida", "assets/producto.jpg"),
                   ],
                 ),
               ),
@@ -140,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
-                      "assets/verduras-buenas-para-perros.png",
+                      "assets/tienda.jpg",
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),

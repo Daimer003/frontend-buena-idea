@@ -6,17 +6,17 @@ class FavoritesScreen extends StatelessWidget {
   final List<Map<String, String>> mockFavorites = const [
     {
       'name': 'Cama para perro grande',
-      'image': 'https://via.placeholder.com/150',
+      'image': 'https://m.media-amazon.com/images/I/71NCqSDcE-L.jpg',
       'price': '\$120.000',
     },
     {
       'name': 'Juguete interactivo para gato',
-      'image': 'https://via.placeholder.com/150',
+      'image': 'https://m.media-amazon.com/images/I/71NCqSDcE-L.jpg',
       'price': '\$35.000',
     },
     {
       'name': 'Collar con GPS para perros',
-      'image': 'https://via.placeholder.com/150',
+      'image': 'https://m.media-amazon.com/images/I/71NCqSDcE-L.jpg',
       'price': '\$250.000',
     },
     {
